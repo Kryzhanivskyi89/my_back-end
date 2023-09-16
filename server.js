@@ -20,8 +20,6 @@ const connectDB = async () => {
   }
 };
 
-// const { PORT } = process.env;
-
 connectDB()
   .then(() => {
     app.listen(PORT, () => {

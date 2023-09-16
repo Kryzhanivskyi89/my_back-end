@@ -1,11 +1,12 @@
-const { HttpError, getDaysOnSite } = require("../../helpers");
-const { User } = require("../../models/users");
+require('dotenv').config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const gravatar = require("gravatar");
 const { nanoid } = require("nanoid");
 const { SECRET_KEY } = process.env;
-// require('dotenv').config();
+
+const { HttpError, getDaysOnSite } = require("../../helpers");
+const { User } = require("../../models/users");
 
 class AuthService {
   async addNewUser(req) {
@@ -132,6 +133,11 @@ class AuthService {
     await User.findByIdAndUpdate(user._id, newData);
   }
 
+  // getDaysOnSite(startDate) {
+  //   const registerDate = new Date(startDate);
+  //   const today = Date.now();
+  //   return Math.round((today - registerDate) / (1000 * 60 * 60 * 24));
+  // }
 }
 
 module.exports = new AuthService();

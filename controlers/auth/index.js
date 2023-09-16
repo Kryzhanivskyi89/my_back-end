@@ -14,7 +14,7 @@ const  getVerity  = require("./getVerity");
 
 const userUpdateSubscription = require("./userUpdateSubscription");
 
-const emailController = require("./emailControlers");
+const emailController = require("./emailControllers");
 
 module.exports = {
   register: ctrlWrapper(register),

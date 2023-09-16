@@ -1,6 +1,6 @@
 const { HttpError, sendEmail, ctrlWrapper } = require("../../helpers");
 const { FRONT_URL } = process.env;
-const { User } = require("../../models/users");
+const { User } = require("../../models");
 
 const subscribe = async (req, res) => {
   const { email } = req.body;

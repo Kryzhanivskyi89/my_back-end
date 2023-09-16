@@ -1,6 +1,6 @@
 const { HttpError } = require("../../helpers");
 
-const { AuthService } = require("../../services/auth");
+const { AuthService } = require("../../services");
 
 const register = async (req, res) => {
   const newUser = await AuthService.addNewUser(req);
