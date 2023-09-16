@@ -19,7 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(logger(formatsLogger));
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
