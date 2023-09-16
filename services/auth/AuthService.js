@@ -1,10 +1,12 @@
-const { HttpError, getDaysOnSite } = require("../../helpers");
-const { User } = require("../../models");
+require('dotenv').config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const gravatar = require("gravatar");
 const { nanoid } = require("nanoid");
 const { SECRET_KEY } = process.env;
+
+const { HttpError, getDaysOnSite } = require("../../helpers");
+const { User } = require("../../models/users");
 
 class AuthService {
   async addNewUser(req) {

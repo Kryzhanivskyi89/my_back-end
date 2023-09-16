@@ -1,21 +1,21 @@
 const nodemailer = require("nodemailer");
 
-const { META_PASSWORD } = process.env;
+const { GMAIL_PASSWORD, GMAIL_EMAIL } = process.env;
 
 const nodemailerConfig = {
-  host: "smtp.meta.ua",
+  host: "smtp.gmail.com",
   port: 465,
-  seure: true,
+  secure: true,
   auth: {
-    user: "yaroslav_velichko.d@meta.ua",
-    pass: META_PASSWORD,
+    user: GMAIL_EMAIL,
+    pass: GMAIL_PASSWORD,
   },
 };
 
 const transport = nodemailer.createTransport(nodemailerConfig);
 
 const sendEmail = async (data) => {
-  const email = { ...data, from: "yaroslav_velichko.d@meta.ua" };
+  const email = { ...data, from: GMAIL_EMAIL };
   await transport
     .sendMail(email)
     .then(() => console.log("Email send success"))

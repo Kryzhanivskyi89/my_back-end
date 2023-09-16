@@ -30,14 +30,14 @@ const usersSchema = new Schema(
     verificationToken: {
       type: String,
     },
-    favorite: [{ type: SchemaTypes.ObjectId, ref: "recipes" }],
+    // favorite: [{ type: SchemaTypes.ObjectId, ref: "recipes" }],
 
-    shoppingList: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "ShoppingList",
-      },
-    ],
+    // shoppingList: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "ShoppingList",
+    //   },
+    // ],
     token: {
       type: String,
       default: null,
