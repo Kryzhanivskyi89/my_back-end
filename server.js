@@ -1,24 +1,9 @@
-const app = require('./app');
-require('dotenv').config();
+const app = require("./app");
 require("colors");
 
-const mongoose = require('mongoose');
+const { connectDB } = require("./config");
 
-const { DB_HOST, PORT } = process.env;
-
-mongoose.set("strictQuery", false);
-
-const connectDB = async () => {
-  try {
-    const db = await mongoose.connect(DB_HOST);
-    console.log(
-      `Database is connected. Name:${db.connection.name}. Port:${db.connection.port}. Host:${db.connection.host}`
-        .green.italic.bold
-    );
-  } catch (error) {
-    console.log(error.message.red.bold);
-  }
-};
+const { PORT } = process.env;
 
 connectDB()
   .then(() => {

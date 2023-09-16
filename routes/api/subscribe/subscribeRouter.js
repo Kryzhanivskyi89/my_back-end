@@ -2,7 +2,7 @@ const express = require("express");
 const {
   resendSubscribe,
   subscribe,
-} = require("../../../controlers/auth/emailControllers");
+} = require("../../../controllers/auth/emailControllers");
 const schemas = require("../../../schemas/auth");
 const { validateBody } = require("../../../decorators");
 const { authenticate } = require("../../../middlewares");
