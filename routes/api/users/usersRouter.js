@@ -25,7 +25,9 @@ usersRouter.post("/logout", authenticate, authController.logout);
 
 usersRouter.get("/verity/:verificationToken", authenticate, authController.getVerity);
 
-usersRouter.patch("/subscribe", authenticate, validateBody(userUpdateSubscription), authController.userUpdateSubscription);
+usersRouter.patch("/subscribe",
+  // authenticate,
+  validateBody(userUpdateSubscription), authController.userUpdateSubscription);
 
 usersRouter.put("/update", authenticate, validateBody(updateSchema), upload.single("avatar"), authController.updateUser);
 
