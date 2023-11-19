@@ -27,6 +27,8 @@ app.use("/subscribe", api.subscribeRouter);
 
 app.use("/users", api.usersRouter);
 
+app.use("/orders", api.ordersRouter);
+
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((req, res) => {

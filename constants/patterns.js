@@ -5,4 +5,8 @@ const emailRegexp =
 
 const passwordRegexp = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
-module.exports = {nameRegexp, emailRegexp, passwordRegexp};
+const phoneRegexp = /^(?=.*[0-9])$/;
+  
+const descriptionRegexp = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
+
+module.exports = {nameRegexp, emailRegexp, passwordRegexp, phoneRegexp, descriptionRegexp};

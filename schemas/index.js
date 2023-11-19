@@ -5,12 +5,12 @@ const {
   updateSchema,
 } = require("./auth");
 
-// const { recipeSchema } = require("./recipe");
+const { ordersAddSchema } = require("./orders");
 
 module.exports = {
   registerSchema,
   loginSchema,
   userUpdateSubscription,
-//   recipeSchema,
   updateSchema,
+  ordersAddSchema,
 };
