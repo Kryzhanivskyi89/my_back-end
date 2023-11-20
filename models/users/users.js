@@ -29,15 +29,9 @@ const usersSchema = new Schema(
     },
     verificationToken: {
       type: String,
+      required: [true, "Verify token is required"],
     },
-    // favorite: [{ type: SchemaTypes.ObjectId, ref: "recipes" }],
-
-    // shoppingList: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "ShoppingList",
-    //   },
-    // ],
+    
     token: {
       type: String,
       default: null,

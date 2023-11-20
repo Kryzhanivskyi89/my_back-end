@@ -12,42 +12,43 @@ const subscribe = async (req, res) => {
     res.status(400).json({ message: "Subscription has already been passed" });
   }
 
-  const verifyEm = {
+  const verifyEmail = {
     to: email,
-    subject: "So Yummy - Підписка",
-    html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.subscriptionToken}">Click to Subscription email</a>`,
+    subject: "Andrew-Dev - Підписка",
+    // html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.subscriptionToken}">Click to Subscription email</a>`,
+    html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.verificationToken}">Click to Subscription email</a>`,
   };
 
-  await sendEmail(verifyEm);
+  await sendEmail(verifyEmail);
 
   res.json({
     message: "Subscription email sent",
   });
 };
-const resendSubscribe = async (req, res) => {
-  const { email } = req.body;
-  const user = await User.findById(req.user._id);
-  if (!user) {
-    throw HttpError(401, "Email not found");
-  }
-  if (user.subscription) {
-    res.status(400).json({ message: "Subscription has already been passed" });
-  }
+// const resendSubscribe = async (req, res) => {
+//   const { email } = req.body;
+//   const user = await User.findById(req.user._id);
+//   if (!user) {
+//     throw HttpError(401, "Email not found");
+//   }
+//   if (user.subscription) {
+//     res.status(400).json({ message: "Subscription has already been passed" });
+//   }
 
-  const SubscriptionEm = {
-    to: email,
-    subject: "So Yummy - Підписка",
-    html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.subscriptionToken}">Click to Subscription email</a>`,
-  };
+//   const SubscriptionEm = {
+//     to: email,
+//     subject: "So Yummy - Підписка",
+//     html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.subscriptionToken}">Click to Subscription email</a>`,
+//   };
 
-  await sendEmail(SubscriptionEm);
+//   await sendEmail(SubscriptionEm);
 
-  res.json({
-    message: "Subscription email sent",
-  });
-};
+//   res.json({
+//     message: "Subscription email sent",
+//   });
+// };
 
 module.exports = {
-  resendSubscribe: ctrlWrapper(resendSubscribe),
+  // resendSubscribe: ctrlWrapper(resendSubscribe),
   subscribe: ctrlWrapper(subscribe),
 };
