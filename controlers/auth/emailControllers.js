@@ -2,7 +2,7 @@ const { HttpError, sendEmail, ctrlWrapper } = require("../../helpers");
 const { FRONT_URL } = process.env;
 const { User } = require("../../models");
 
-const subscribe = async (req, res) => {
+const resendSubscribe = async (req, res) => {
   const { email } = req.body;
   const user = await User.findById(req.user._id);
   if (!user) {
@@ -25,7 +25,7 @@ const subscribe = async (req, res) => {
     message: "Subscription email sent",
   });
 };
-// const resendSubscribe = async (req, res) => {
+// const subscribe = async (req, res) => {
 //   const { email } = req.body;
 //   const user = await User.findById(req.user._id);
 //   if (!user) {
@@ -49,6 +49,6 @@ const subscribe = async (req, res) => {
 // };
 
 module.exports = {
-  // resendSubscribe: ctrlWrapper(resendSubscribe),
-  subscribe: ctrlWrapper(subscribe),
+  resendSubscribe: ctrlWrapper(resendSubscribe),
+  // subscribe: ctrlWrapper(subscribe),
 };

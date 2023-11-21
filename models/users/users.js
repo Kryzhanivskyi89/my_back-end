@@ -21,6 +21,7 @@ const usersSchema = new Schema(
     },
     subscription: {
       type: String,
+      enum: subscriptionList,
       default: "",
     },
     verify: {

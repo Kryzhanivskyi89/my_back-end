@@ -23,7 +23,7 @@ usersRouter.get("/current", authenticate, authController.getCurrent);
 
 usersRouter.post("/logout", authenticate, authController.logout);
 
-usersRouter.get("/verity/:verificationToken", authenticate, authController.getVerity);
+// usersRouter.get("/verity/:verificationToken", authenticate, authController.getVerity);
 
 usersRouter.patch("/subscribe",
   authenticate,
