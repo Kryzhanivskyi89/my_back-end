@@ -1,8 +1,12 @@
 const Joi = require("joi");
 
+const {
+  emailRegexp,
+} = require("../../constants/patterns");
+
 const userUpdateSubscription = Joi.object({
     subscription: Joi.string()
-        .valid(...subscriptionList)
+        // .valid(...subscriptionList)
         .required(),
 });
 
