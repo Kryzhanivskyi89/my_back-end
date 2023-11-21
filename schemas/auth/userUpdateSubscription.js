@@ -5,9 +5,10 @@ const {
 } = require("../../constants/patterns");
 
 const userUpdateSubscription = Joi.object({
-    subscription: Joi.string()
-        // .valid(...subscriptionList)
-        .required(),
+    inputEmail: Joi.string().required(),
+    // subscription: Joi.string()
+    //     // .valid(...subscriptionList)
+    //     .required(),
 });
 
 const verifySchema = Joi.object({
