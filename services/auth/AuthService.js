@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const gravatar = require("gravatar");
 const { nanoid } = require("nanoid");
 const { SECRET_KEY } = process.env;
+// const { FRONT_URL } = process.env;
 
 const { HttpError, getDaysOnSite } = require("../../helpers");
 const { User } = require("../../models/users");
@@ -26,14 +27,24 @@ class AuthService {
 
     const avatarUrl = gravatar.url(email);
 
-    const subscriptionToken = nanoid();
+    const verificationToken = nanoid();
 
     const newUser = await User.create({
       ...req.body,
       password: hashPassword,
       avatarUrl,      
-      subscriptionToken,
+      verificationToken,
     });
+
+    // const verifyEmail = {
+    // to: email,
+    // subject: "Andrew-Dev - Підписка",
+    // html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.subscriptionToken}">Click to Subscription email</a>`,
+    // html: `<a target="_blank" href="${FRONT_URL}/subscribe/${user.verificationToken}">Click to Subscription email</a>`,
+    // };
+
+    // await sendEmail(verifyEmail);
+
 
     const { _id: id } = newUser;
     const token = jwt.sign({ id }, SECRET_KEY, {

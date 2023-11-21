@@ -19,7 +19,7 @@ const register = async (req, res) => {
       avatarUrl: newUser.avatarUrl,
       favorite: newUser.favorite,
       shoppingList: newUser.shoppingList,
-      subscriptionToken: newUser.subscriptionToken,
+      verificationToken: newUser.verificationToken,
       registeredAt: newUser.createdAt,
     },
   });
