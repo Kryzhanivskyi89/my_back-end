@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const { GMAIL_PASSWORD, GMAIL_EMAIL } = process.env;
 
 const nodemailerConfig = {
-  host: "smtp.gmail.com",
+  host: "smtp.ukr.net",
   port: 465,
   secure: true,
   auth: {
