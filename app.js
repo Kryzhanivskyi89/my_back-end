@@ -23,7 +23,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/subscribe", api.subscribeRouter);
+// app.use("/subscribe", api.subscribeRouter);
 
 app.use("/users", api.usersRouter);
 

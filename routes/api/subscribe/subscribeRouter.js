@@ -1,33 +1,33 @@
-const express = require("express");
-const {
-  resendSubscribe,
-  // subscribe,
-} = require("../../../controlers/auth/emailControllers");
+// const express = require("express");
+// const {
+//   resendSubscribe,
+//   // subscribe,
+// } = require("../../../controlers/auth/emailControllers");
 
-const getVerity = require ('../../../controlers/auth/getVerity')
-const schemas = require("../../../schemas/auth/userUpdateSubscription");
-const { validateBody } = require("../../../decorators");
-const { authenticate } = require("../../../middlewares");
+// const getVerity = require ('../../../controlers/auth/getVerity')
+// const schemas = require("../../../schemas/auth/userUpdateSubscription");
+// const { validateBody } = require("../../../decorators");
+// const { authenticate } = require("../../../middlewares");
 
-const subscribeRouter = express.Router();
-
-subscribeRouter.post(
-  "/",
-  authenticate,
-  validateBody(schemas.verifySchema),
-  resendSubscribe
-);
+// const subscribeRouter = express.Router();
 
 // subscribeRouter.post(
 //   "/",
 //   authenticate,
 //   validateBody(schemas.verifySchema),
-//   subscribe
+//   resendSubscribe
 // );
 
-// subscribeRouter.get("/:subscriptionToken", authenticate, subscribe);
+// // subscribeRouter.post(
+// //   "/",
+// //   authenticate,
+// //   validateBody(schemas.verifySchema),
+// //   subscribe
+// // );
 
-subscribeRouter.get("/:verificationToken", authenticate, getVerity);
+// // subscribeRouter.get("/:subscriptionToken", authenticate, subscribe);
+
+// subscribeRouter.get("/:verificationToken", authenticate, getVerity);
 
 
-module.exports = subscribeRouter;
+// module.exports = subscribeRouter;

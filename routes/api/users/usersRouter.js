@@ -11,6 +11,7 @@ const {
   loginSchema,
   userUpdateSubscription,
   updateSchema,
+  verifySchema
 } = require("../../../schemas/auth");
 
 const usersRouter = express.Router();
@@ -29,5 +30,18 @@ usersRouter.patch("/subscribe",
   authController.userUpdateSubscription);
 
 usersRouter.put("/update", authenticate, validateBody(updateSchema), upload.single("avatar"), authController.updateUser);
+
+usersRouter.get("/verify/:verificationToken",
+  authenticate,
+  authController.getVerity);
+
+usersRouter.post("/verify",
+  authenticate,
+  validateBody(verifySchema),
+  authController.emailController
+);
+
+
+
 
 module.exports = usersRouter;

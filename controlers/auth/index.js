@@ -24,5 +24,5 @@ module.exports = {
   userUpdateSubscription: ctrlWrapper(userUpdateSubscription),
   updateUser: ctrlWrapper(updateUser),
   getVerity: ctrlWrapper(getVerity),
-  emailController,
+  emailController: ctrlWrapper(emailController),
 };
