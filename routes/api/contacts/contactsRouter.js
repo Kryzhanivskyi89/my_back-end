@@ -16,6 +16,6 @@ contactsRouter.post('/addContact', validateBody(schemas.ordersAddSchema), contac
 
 contactsRouter.get('/fetchAll', contactControllers.getAllContacts);
 
-contactsRouter.delete('/:contactId', isValidId, contactControllers.deleteContactById);
+contactsRouter.delete('/:contactId', contactControllers.deleteContactById);
 
 module.exports = contactsRouter;
