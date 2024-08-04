@@ -4,20 +4,22 @@ const orderSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Set name for contact'],
+      required: [true, 'Set name of client'],
     },
     phone: {
-        type: String,
+      type: String,
+      required: [true, 'Set phone of client'],
     },
     
     description: {
       type: String,
+      required: [true, 'Descript your order'],
     },
     
   },
   { versionKey: false, timestamps: true }
 );
 
-const Order = model('orders', orderSchema);
+const Order = model('Order', orderSchema);
 
 module.exports = Order;

@@ -12,7 +12,9 @@ const { validateBody } = require("../../../decorators");
 
 // router.use("/", authenticate);
 
-ordersRouter.post('/', validateBody(schemas.ordersAddSchema), orderControllers.addOrder);
+ordersRouter.post('/',
+    // validateBody(schemas.ordersAddSchema),
+    orderControllers.addOrder);
 
 
 module.exports = ordersRouter;

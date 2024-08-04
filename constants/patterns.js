@@ -5,7 +5,8 @@ const emailRegexp =
 
 const passwordRegexp = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
-const phoneRegexp = /^(?=.*[0-9])$/;
+// const phoneRegexp = /^(?=.*[0-9])$/;
+const phoneRegexp = /^[+0-9]{13}$/;
   
 const descriptionRegexp = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
