@@ -16,7 +16,7 @@
     "lint:fix": "eslint --fix **/*.js"
   },
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.1.1",
     "cloudinary": "^1.37.3",
     "colors": "^1.4.0",
     "cors": "2.8.5",
@@ -33,5 +33,4 @@
     "nanoid": "^3.3.4",
     "nodemailer": "^6.9.3"
   }
-  
 }
