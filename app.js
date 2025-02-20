@@ -27,9 +27,9 @@ app.use(express.json());
 
 app.use("/users", api.usersRouter);
 
-app.use("/orders", api.ordersRouter);
+// app.use("/orders", api.ordersRouter);
 
-app.use("/contacts", api.contactsRouter);
+// app.use("/contacts", api.contactsRouter);
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
