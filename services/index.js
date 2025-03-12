@@ -1,9 +1,7 @@
 const AuthService = require("./auth");
-const ContactsService = require("./contacts");
-const OrdersService = require("./orders");
+// const ContactsService = require("./contacts");
 
 module.exports = {
   AuthService,
   // ContactsService,
-  // OrdersService
 };
