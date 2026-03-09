@@ -12,7 +12,7 @@ const { validateBody } = require("../../../decorators");
 
 // router.use("/", authenticate);
 
-contactsRouter.post('/addContact', validateBody(schemas.ordersAddSchema), contactControllers.addContacts);
+contactsRouter.post('/addContact', validateBody(schemas.contactsAddSchema), contactControllers.addContacts);
 
 contactsRouter.get('/fetchAll', contactControllers.getAllContacts);
 
