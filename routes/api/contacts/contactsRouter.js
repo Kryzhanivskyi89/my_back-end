@@ -12,10 +12,10 @@ const { validateBody } = require("../../../decorators");
 
 // router.use("/", authenticate);
 
-contactsRouter.post('/addContact', validateBody(schemas.contactsAddSchema), contactControllers.addContacts);
+contactsRouter.post('/addContact', authenticate, validateBody(schemas.contactsAddSchema), contactControllers.addContacts);
 
-contactsRouter.get('/fetchAll', contactControllers.getAllContacts);
+contactsRouter.get('/fetchAll', authenticate, contactControllers.getAllContacts);
 
-contactsRouter.delete('/:contactId', contactControllers.deleteContactById);
+contactsRouter.delete('/:contactId', authenticate, contactControllers.deleteContactById);
 
 module.exports = contactsRouter;
