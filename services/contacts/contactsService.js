@@ -1,4 +1,4 @@
-const Contacts = require("../../models/contacts");
+const { Contacts } = require("../../models/contacts");
 
 class ContactsService {
     async getAll() {
