@@ -1,16 +1,17 @@
-const Contacts = require("../../models/contacts");
 const { ContactsService } = require('../../services/contacts');
 
 const addContact = async (req, res) => {
-  const { _id: owner } = req.user;
-  const contactData = {
-          ...req.body,
-          name: this.name,
-          phone: number,
-          owner,
-      };
-  const nawContact = await ContactsService.addContact(contactData);
-  res.status(201).json(nawContact);
+    const { _id: owner } = req.user;
+    const { name, phone } = req.body; // ← дістаємо з req.body
+
+    const contactData = {
+        name,
+        phone,
+        owner,
+    };
+
+    const newContact = await ContactsService.addContact(contactData);
+    res.status(201).json(newContact);
 };
 
 module.exports = addContact;
