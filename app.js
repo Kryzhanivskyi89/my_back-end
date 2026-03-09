@@ -2,15 +2,14 @@
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
-const path = require("path");
 // const swaggerUi = require("swagger-ui-express");
 // const swaggerDocument = require("./swagger.json");
-
-const { api } = require("./routes");
+const path = require("path");
 
 const configPath = path.join(__dirname, "config", ".env");
-
 require("dotenv").config({ path: configPath });
+
+const { api } = require("./routes");
 
 const app = express();
 
@@ -24,9 +23,13 @@ app.use(cors());
 
 app.use(express.json());
 
+// app.use("/subscribe", api.subscribeRouter);
+
 app.use("/users", api.usersRouter);
 
-// app.use("/contacts", api.contactsRouter);
+app.use("/orders", api.ordersRouter);
+
+app.use("/contacts", api.contactsRouter);
 
 // app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
