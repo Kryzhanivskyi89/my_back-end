@@ -6,11 +6,12 @@ const contactControllers = require('../../../controlers/contacts');
 
 const { isValidId, authenticate } = require('../../../middlewares');
 
-const schemas = require("../../../schemas/contacts");
-
 const { validateBody } = require("../../../decorators");
 
+const schemas = require("../../../schemas/contacts");
+
 // router.use("/", authenticate);
+
 
 contactsRouter.post('/addContact', authenticate, validateBody(schemas.contactsAddSchema), contactControllers.addContacts);
 

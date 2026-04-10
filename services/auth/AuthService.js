@@ -6,7 +6,7 @@ const { nanoid } = require("nanoid");
 const { SECRET_KEY } = process.env;
 // const { FRONT_URL } = process.env;
 
-const { HttpError, getDaysOnSite } = require("../../helpers");
+const { HttpError } = require("../../helpers");
 const { User } = require("../../models/users");
 
 class AuthService {
@@ -120,7 +120,7 @@ class AuthService {
     const { name, email, avatarUrl, favorite, shoppingList, createdAt } =
       req.user;
 
-    const days = getDaysOnSite(createdAt);
+    const days = this.getDaysOnSite(createdAt);
 
     const user = {
       name,
@@ -144,11 +144,11 @@ class AuthService {
     await User.findByIdAndUpdate(user._id, newData);
   }
 
-  // getDaysOnSite(startDate) {
-  //   const registerDate = new Date(startDate);
-  //   const today = Date.now();
-  //   return Math.round((today - registerDate) / (1000 * 60 * 60 * 24));
-  // }
+  getDaysOnSite(startDate) {
+    const registerDate = new Date(startDate);
+    const today = Date.now();
+    return Math.round((today - registerDate) / (1000 * 60 * 60 * 24));
+  }
 }
 
 module.exports = new AuthService();

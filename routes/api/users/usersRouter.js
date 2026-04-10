@@ -1,5 +1,7 @@
 const express = require("express");
 
+const usersRouter = express.Router();
+
 const authController = require("../../../controlers/auth");
 
 const { authenticate, upload } = require("../../../middlewares");
@@ -14,7 +16,6 @@ const {
   verifySchema
 } = require("../../../schemas/auth");
 
-const usersRouter = express.Router();
 
 usersRouter.post("/register", validateBody(registerSchema), authController.register);
 
